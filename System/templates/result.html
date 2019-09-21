@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Intelligent Traffic Light Management System</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+	</head>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#result-4").hide();
+            $("#result-3").hide();
+            var junc = {{junctions}};
+            if(junc==4){
+                    $("#result-4").show();
+                    $("#result-3").hide();
+                    var junc_type = "Cross Junction";
+                    $('#id1').val(junc_type);           
+                }
+                else {
+                    $("#result-4").hide();
+                    $("#result-3").show();
+                    var junc_type = "T-Junction";
+                    $('#id1').val(junc_type);         
+            }
+        });
+       
+    </script>
+<body>
+	<div class="container-form bgmain">
+		<!-- <div class="wrap-sidebar"></div> -->
+		<div class="wrap-form">
+			<form class="main-form validate-form" action="." method="post">
+				<span class="main-form-title">
+					Intelligent Traffic Light Management System
+				</span>
+				<span class="main-form-header">
+                Junction Type: <input id="id1" value="" position="relative" style="font-weight:bold;font-size:22px;">
+             </span>				
+            <div id="result-4" class="cont-result">
+    					<span class="main-form-header">
+		                Rule-Based Timing Assignment
+		             </span>	
+					<span class="wrap-result">Direction 1 & 2 (EW) - Straight Timing: {{time_1}}</span>
+					<span class="wrap-result">Direction 1 & 2 (EW) - Right-Turn Timing: {{time_2}}</span>
+					<span class="wrap-result">Direction 3 & 4 (NS) - Straight Timing: {{time_3}}</span>
+					<span class="wrap-result">Direction 3 & 4 (NS) - Right-Turn Timing: {{time_4}}</span>
+					<span class="main-form-header">
+		                Genetic Algorithm Timing Assignment
+		            </span>
+					<span class="wrap-result">Direction 1 & 2 (EW) - Straight Timing: {{tga_1}}</span>
+					<span class="wrap-result">Direction 1 & 2 (EW) - Right-Turn Timing: {{tga_2}}</span>
+					<span class="wrap-result">Direction 3 & 4 (NS) - Straight Timing: {{tga_3}}</span>
+					<span class="wrap-result">Direction 3 & 4 (NS) - Right-Turn Timing: {{tga_4}}</span>
+            </div>
+            <div id="result-3" class="cont-result">
+					<span class="main-form-header">
+		                Rule-Based Timing Assignment
+		             </span>	
+                    <span class="wrap-result">Direction 1 & 2 - Straight Timing: {{time_1}}</span>
+                    <span class="wrap-result">Direction 1 & 2 - Right-Turn Timing: {{time_2}}</span>
+                    <span class="wrap-result">Direction 3 - Right-Turn Timing: {{time_3}}</span>
+					<span class="main-form-header">
+		                Genetic Algorithm Timing Assignment
+		            </span>
+					<span class="wrap-result">Direction 1 & 2 (EW) - Straight Timing: {{tga_1}}</span>
+					<span class="wrap-result">Direction 1 & 2 (EW) - Right-Turn Timing: {{tga_2}}</span>
+					<span class="wrap-result">Direction 3 - Right-Turn Timing: {{tga_3}}</span>
+            </div>            
+            <a href="/"><button class="form-btn" align="center" disabled>
+                        <span><a href="/">Back to Home</a>
+                            <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                        </span>
+            </button>
+
+			</form>
+		</div>
+	</div>
+</body>

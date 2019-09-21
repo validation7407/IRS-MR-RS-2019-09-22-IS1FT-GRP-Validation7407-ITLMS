@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Intelligent Traffic Light Management System</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+	</head>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#3wj").hide();
+            $("#4wj").hide();
+            $("#result-4").hide();
+            $("#result-3").hide();
+            $("#j1").on("change",function(){
+                if($("#j1").val()=="4way"){
+                    $("#3wj").hide();
+                    $("#4wj").show();
+                    $("#result-4").show();
+                    $("#result-3").hide();
+                    var cross_junc = "Cross Junction";
+                    $('#id1').val(cross_junc);           
+                }
+                else if ($("#j1").val()=="3way"){
+                    $("#3wj").show();  
+                    $("#4wj").hide();
+                    var t_junc = "T-Junction";
+                    $('#id1').val(t_junc);
+                    $("#result-3").show();
+                    $("#result-4").hide();            
+                } 
+                else {
+                    $("#4wj").hide();
+                    $("#3wj").hide();
+                    $("#result-3").hide();
+                    $("#result-4").hide();   
+            }
+            });
+        });
+          
+    </script>
+<body>
+	<div class="container-form bgmain">
+		<!-- <div class="wrap-sidebar"></div> -->
+		<div class="wrap-form">
+			<form class="main-form validate-form" action="." method="post">
+				<span class="main-form-title">
+					Intelligent Traffic Light Management System
+				</span>
+                <span class="main-form-subtext">
+                <u>User Guide</u>:<br/><br/>
+                1. Select the type of junction: "T-Junction" or "Cross-Junction"<br/>
+                2. For each of the possible directions as indicated in the figure on the left, enter the number of <u><b>Lanes</b></u>.<br/>
+                3. Enter the current <u><b>No. of Vehicles</b></u> in each lane,separated by a comma e.g. Lanes: "2", No. of Cars: "3,4" or Lanes: "3", No of Cars: "5,10,15"<br/>
+                4. Enter the arrival rates of cars in that direction (cars/sec) in <u><b>Arrival Rate</b></u><br/>
+                5. Enter in the number of vehicles in the right-turning lanes in <u><b>Right Lane</b></u>.<br/>
+                6. Click <u><b>"Submit"</b></u> to view the results.
+            </span>
+				<span class="main-form-header">
+					Select the type of junction
+				<select id="j1" name="jlist">
+        				<option value="default">Select junction type</option>
+                        <option value="3way">T-Junction</option>
+                        <option value="4way">4-Way Junction</option>
+             </select><br></br>
+                Junction Type: <input id="id1" value="" position="relative" style="font-weight:bold;font-size:22px;">
+            </span>
+            	<div id="4wj" class="cont">             
+                    <img src="/static/trafficjunction.jpg" style="width:60%;height:100%;" align="left">
+                    <p>Direction 1</p>
+                <span style="display:inline-block;text-align:center;">
+                <label for="d1lanes" style="display:block;text-align:center;"><b>Lanes</b></label>
+                <input type="text" placeholder="Enter number of lanes" name="d1lanes" >
+                </span>
+                <span style="display:inline-block;text-align:center;">
+                <label for="d1cars" style="display:block;text-align:center;"><b>No. of Vehicles</b></label>
+                <input type="text" placeholder="Enter number of cars" name="d1cars" >
+                </span>
+                <span style="display:inline-block;text-align:center;">
+                <label for="d1rate" style="display:block;text-align:center;"><b>Arrival Rate</b></label>
+                <input type="text" placeholder="Enter arrival rate" name="d1rate" >
+                </span>
+                <span style="display:inline-block;text-align:center;">
+                <label for="d1right" style="display:block;text-align:center;"><b>Right Lane</b></label>
+                <input type="text" placeholder="Enter number of cars" name="d1right" >
+                </span>
+                   <p> Direction 2 </p>
+                <span style="display:inline-block;text-align:center;">
+                <label for="d2lanes" style="display:block;text-align:center;"><b>Lanes</b></label>
+                <input type="text" placeholder="Enter number of lanes" name="d2lanes" >
+                </span>                                   
+                <span style="display:inline-block;text-align:center;">
+                <label for="d2cars" style="display:block;text-align:center;"><b>No. of Vehicles</b></label>
+                <input type="text" placeholder="Enter number of cars" name="d2cars" >
+                </span>
+                <span style="display:inline-block;text-align:center;">
+                <label for="d2rate" style="display:block;text-align:center;"><b>Arrival Rate</b></label>
+                <input type="text" placeholder="Enter arrival rate" name="d2rate" >
+                </span>
+                <span style="display:inline-block;text-align:center;">
+                <label for="d2right" style="display:block;text-align:center;"><b>Right Lane</b></label>
+                <input type="text" placeholder="Enter number of cars" name="d2right" >
+                </span>
+                    <p>Direction 3</p>
+                <span style="display:inline-block;text-align:center;">
+                <label for="d3lanes" style="display:block;text-align:center;"><b>Lanes</b></label>
+                <input type="text" placeholder="Enter number of lanes" name="d3lanes" >
+                </span> 
+                <span style="display:inline-block;text-align:center;">
+                <label for="d3cars" style="display:block;text-align:center;"><b>No. of Vehicles</b></label>
+                <input type="text" placeholder="Enter number of cars" name="d3cars" >
+                 </span>
+                <span style="display:inline-block;text-align:center;">
+                <label for="d3rate" style="display:block;text-align:center;"><b>Arrival Rate</b></label>
+                <input type="text" placeholder="Enter arrival rate" name="d3rate" >
+                
+                 </span>
+                <span style="display:inline-block;text-align:center;">
+                <label for="d3right" style="display:block;text-align:center;"><b>Right Lane</b></label>
+                <input type="text" placeholder="Enter number of cars" name="d3right" >
+                </span>
+                   <p> Direction 4 </p>
+                <span style="display:inline-block;text-align:center;">
+                <label for="d4lanes" style="display:block;text-align:center;"><b>Lanes</b></label>
+                <input type="text" placeholder="Enter number of lanes" name="d4lanes" >
+                </span>                
+                <span style="display:inline-block;text-align:center;">
+                <label for="d4cars"style="display:block;text-align:center;"><b>No. of Vehicles</b></label>
+                <input type="text" placeholder="Enter number of cars" name="d4cars" >
+                </span>
+                <span style="display:inline-block;text-align:center;">
+                <label for="d4rate" style="display:block;text-align:center;"><b>Arrival Rate</b></label>
+                <input type="text" placeholder="Enter arrival rate" name="d4rate" >
+                </span>
+                <span style="display:inline-block;text-align:center;">
+                <label for="d4right" style="display:block;text-align:center;"><b>Right Lane</b></label>
+                <input type="text" placeholder="Enter number of cars" name="d4right" >                                
+                </span>
+                
+                <button class="form-btn" align="center" type="submit" formmethod="post">
+						<span>Submit
+							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+						</span>
+					</button>
+                </div>
+            <div id="3wj" class="cont"> 
+            <img src="/static/trafficjunction1.jpg" style="width:60%;height:100%;" align="left">
+                    <p>Direction 1</p>
+                <span style="display:inline-block;text-align:center;">
+                <label for="td1lanes" style="display:block;text-align:center;"><b>Lanes</b></label>
+                <input type="text" placeholder="Enter number of lanes" name="td1lanes" >
+                </span> 
+                <span style="display:inline-block;text-align:center;">
+                <label for="td1cars" style="display:block;text-align:center;"><b>No. of Vehicles</b></label>
+                <input type="text" placeholder="Enter number of cars" name="td1cars" >
+                </span>
+                <span style="display:inline-block;text-align:center;">
+                <label for="td1rate" style="display:block;text-align:center;"><b>Arrival Rate</b></label>
+                <input type="text" placeholder="Enter arrival rate" name="td1rate" >
+                </span>
+                <span style="display:inline-block;text-align:center;">
+                <label for="td1right" style="display:block;text-align:center;"><b>Right Lane</b></label>
+                <input type="text" placeholder="Enter number of cars" name="td1right" >
+                </span>
+                   <p> Direction 2 </p>
+                
+                <span style="display:inline-block;text-align:center;">
+                <label for="td2lanes" style="display:block;text-align:center;"><b>Lanes</b></label>
+                <input type="text" placeholder="Enter number of lanes" name="td2lanes" >
+                </span>                    
+                <span style="display:inline-block;text-align:center;">
+                <label for="td2cars" style="display:block;text-align:center;"><b>No. of Vehicles</b></label>
+                <input type="text" placeholder="Enter number of cars" name="td2cars" >
+                </span>
+                <span style="display:inline-block;text-align:center;">
+                <label for="td2rate" style="display:block;text-align:center;"><b>Arrival Rate</b></label>
+                <input type="text" placeholder="Enter arrival rate" name="td2rate" >
+                </span>
+                <span style="display:inline-block;text-align:center;">
+                <label for="td2right" style="display:block;text-align:center;"><b>Right Lane</b></label>
+                <input type="text" placeholder="Enter number of cars" name="td2right" value = "0" readonly = "readonly">
+                </span>
+                
+                    <p>Direction 3</p>
+                
+                <span style="display:inline-block;text-align:center;">
+                <label for="td3lanes" style="display:block;text-align:center;"><b>Lanes</b></label>
+                <input type="text" placeholder="Enter number of lanes" name="td3lanes" >
+                </span>                    
+                <span style="display:inline-block;text-align:center;">
+                <label for="td3cars" style="display:block;text-align:center;"><b>No. of Vehicles</b></label>
+                <input type="text" placeholder="Enter number of cars" name="td3cars" >
+                </span>
+                <span style="display:inline-block;text-align:center;">
+                <label for="td3rate" style="display:block;text-align:center;"><b>Arrival Rate</b></label>
+                <input type="text" placeholder="Enter arrival rate" name="td3rate" >
+                
+                 </span>
+                <span style="display:inline-block;text-align:center;">
+                <label for="td3right" style="display:block;text-align:center;"><b>Right Lane</b></label>
+                <input type="text" placeholder="Enter number of cars" name="td3right" value = "0" readonly = "readonly">
+                </span>
+                   
+                
+                <button class="form-btn" align="center" type="submit" formmethod="post">
+                        <span>Submit
+                            <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                        </span>
+                    </button>
+            </div>
+
+			</form>
+		</div>
+	</div>
+</body>

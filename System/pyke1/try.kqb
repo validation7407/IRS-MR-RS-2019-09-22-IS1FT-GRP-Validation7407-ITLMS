@@ -1,0 +1,31 @@
+junction_category($lanes)
+    How many lanes in Junction?
+    ---
+    $lanes = integer(small=1-2 |
+                              big=3-7)
+
+
+junction_number($num)
+	How many number of junctions ?
+	---
+	$num = integer(2-4)
+
+straight_lane($sl)
+	How many number of straight lanes ?
+	---
+	$sl = integer(1-4)
+
+right_lane_there($yn)
+	Is there a Right Lane ? (Y/N)
+	---
+	$yn = string
+
+cars_straight_lane($csl)
+	How many cars ?
+	---
+	$csl = integer(0-30)
+
+cars_right_lane($crl)
+	How many cars in the right lane ?
+	---
+	$crl = integer(0-30)
