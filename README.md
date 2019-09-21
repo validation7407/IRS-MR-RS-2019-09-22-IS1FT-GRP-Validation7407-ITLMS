@@ -2,6 +2,8 @@
 # SECTION 1: PROJECT TITLE
 Intelligent Traffic Light Management System (ITLMS)
 --
+![alt text](https://github.com/validation7407/IRS-MR-RS-2019-09-22-IS1FT-GRP-Validation7407-ITLMS/blob/master/poster.png)
+
 
 # SECTION 2: EXECUTIVE SUMMARY
 Transportation is a core area of a country’s economy and functions, providing the means of quick and efficient movement of their population and goods through the country. Traffic lights are a critical component in road networks, directing the flow of vehicular and pedestrian traffic and ensure that transportation runs smoothly. Poor design and management of such traffic control systems may lead to traffic jams as well as road accidents, hampering economic activity and more importantly, the loss of citizens’ lives. In addition wait times are known to induce stress and affect psychological well-being for commuters, which may have adverse effects on health and work productivity.
@@ -14,7 +16,7 @@ Hence, there is a need for efficient and robust traffic control systems globally
 |:---------:|:-------------:|:-----:|:----:|
 |Ang Boon Yew| A0096966E		|Chatbot Design, DialogFlow Configuration, Flask Backend App, Handling of Zomato APIs,Integration with Telegram, App Hosting on Heroku 	|boonyew@u.nus.edu|
 |Kartik Chopra|A0198483L		|Initial survey for algorithm design, Algorithm Design, Question based knowledge system, Backend code for time calculation 	|kartik@u.nus.edu|
-|Karamjot Singh|A0198470U		|Chatbot Design, DialogFlow Configuration, Flask Backend App, Handling of Zomato APIs, Backend Modules and Testing, Video Editing	|	singh@u.nus.edu|
+|Karamjot Singh|A0198470U		| Algorithm design for Rule-based approach, Initial survey, PyKE, Benchmarking, Report, Video Editing	|	singh@u.nus.edu|
 
 
 # SECTION 4: VIDEO INTRODUCTION & USER GUIDE
