@@ -13,7 +13,7 @@ Hence, there is a need for efficient and robust traffic control systems globally
 | Official Full Name|Student ID| Work Scope  |Email|
 |:---------:|:-------------:|:-----:|:----:|
 |Ang Boon Yew| A0096966E		|Chatbot Design, DialogFlow Configuration, Flask Backend App, Handling of Zomato APIs,Integration with Telegram, App Hosting on Heroku 	|boonyew@u.nus.edu|
-|Kartik Chopra|A0198483L		|Initial survey for algorithm design, Algorithm Design, Question based knowledge system, BAckend code for time calculation 	|kartik@u.nus.edu|
+|Kartik Chopra|A0198483L		|Initial survey for algorithm design, Algorithm Design, Question based knowledge system, Backend code for time calculation 	|kartik@u.nus.edu|
 |Karamjot Singh|A0198470U		|Chatbot Design, DialogFlow Configuration, Flask Backend App, Handling of Zomato APIs, Backend Modules and Testing, Video Editing	|	singh@u.nus.edu|
 
 
