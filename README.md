@@ -19,8 +19,8 @@ Hence, there is a need for efficient and robust traffic control systems globally
 |Karamjot Singh|A0198470U		| Algorithm design for Rule-based approach, Initial survey, PyKE, Benchmarking, Report, Video Editing	|	singh@u.nus.edu|
 
 
-# SECTION 4: VIDEO INTRODUCTION & USER GUIDE
-<a href="https://github.com/validation7407/IRS-MR-2019-09-22-IS1FT-GRP-Validation7407-ITLMS/blob/master/ITLMS_Video.mp4" target="_blank"><img src="https://github.com/validation7407/IRS-MR-2019-09-22-IS1FT-GRP-Validation7407-ITLMS/blob/master/ITLMS_Video.jpg" 
+# SECTION 4: VIDEO INTRODUCTION
+<a href="https://youtu.be/xhr5-ozRhjk" target="_blank"><img src="https://img.youtube.com/vi/xhr5-ozRhjk/0.jpg" 
 alt="ITLMS" width="640" height="360" border="10" /></a>
 
 
@@ -48,4 +48,4 @@ Follow below steps to setup ITLMS:
 Integration with external road traffic sensor systems or other inputs sources can also be done by passing these inputs to the Flask server through a HTTP POST request.
 
 # SECTION 6: PROJECT REPORT
-[https://github.com/validation7407/IRS-MR-RS-2019-09-22-IS1FT-GRP-Validation7407-ITLMS/blob/master/ITLMS_FinalReport_Group14.pdf]
+[https://github.com/validation7407/IRS-MR-RS-2019-09-22-IS1FT-GRP-Validation7407-ITLMS/blob/master/FinalReport/ITLMS_Group14_Project_Report.pdf]
