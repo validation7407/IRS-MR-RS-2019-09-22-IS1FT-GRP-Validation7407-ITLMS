@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Sep  5 15:54:57 2019
+    Intelligent Traffic Light Management System (ITLMS)
+    
+    1. Pyke Rules Engine & Rules-Based Formula Timing
+    2. Genetic Algorithm Timing Optimization Model 
+    3. Flask Web Server
 
-@author: kartik
 """
 
 from pyke import knowledge_engine
