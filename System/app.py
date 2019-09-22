@@ -260,9 +260,9 @@ def flow(data,individual,road,arr,junction_type):
     if junction_type == 4:                
         phase_4 = individual[road+switch][1] / \
                         (np.max(data[road+switch][1]) + a2r*(np.max(individual[road])+individual[road+switch][1]+individual[road+switch][0]))*3.5 
-        value = np.mean(abs(np.diff([phase_1,phase_2,phase_3,phase_4]))**2)
+        value = np.mean(abs(np.diff([phase_1,phase_2,phase_3,phase_4])))
     else:
-        value = np.mean(abs(np.diff([phase_1,phase_2,phase_3]))**2)       
+        value = np.mean(abs(np.diff([phase_1,phase_2,phase_3])))       
     
     if np.min(individual) <= 5:
         value = 1000
