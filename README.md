@@ -14,7 +14,7 @@ Hence, there is a need for efficient and robust traffic control systems globally
 
 | Official Full Name|Student ID| Work Scope  |Email|
 |:---------:|:-------------:|:-----:|:----:|
-|Ang Boon Yew| A0096966E		|Chatbot Design, DialogFlow Configuration, Flask Backend App, Handling of Zomato APIs,Integration with Telegram, App Hosting on Heroku 	|boonyew@u.nus.edu|
+|Ang Boon Yew| A0096966E		|Initial survey for traffic control systems, Genetic algorithm design and backend code, Flask server, Web HTML interface |boonyew@u.nus.edu|
 |Kartik Chopra|A0198483L		|Initial survey for algorithm design, Algorithm Design, Question based knowledge system, Backend code for time calculation 	|kartik@u.nus.edu|
 |Karamjot Singh|A0198470U		| Algorithm design for Rule-based approach, Initial survey, PyKE, Benchmarking, Report, Video Editing	|	singh@u.nus.edu|
 
@@ -29,14 +29,15 @@ The ITLMS comes with a web-based user interface in order to demonstrate the use 
 
 
 Follow below steps to setup ITLMS:
-1. <u>Setting up the Flask Server
--   git clone  [https://github.com/validation7407/IRS-MR-RS-2019-09-22-IS1FT-GRP-Validation7407-ITLMS.git](https://github.com/validation7407/IRS-MR-RS-2019-09-22-IS1FT-GRP-Validation7407-ITLMS.git)
--  Open up command prompt for Windows or Terminal for Linux
+1. <u>Setting up the Flask Server</u>
+-  git clone  [https://github.com/validation7407/IRS-MR-RS-2019-09-22-IS1FT-GRP-Validation7407-ITLMS.git](https://github.com/validation7407/IRS-MR-RS-2019-09-22-IS1FT-GRP-Validation7407-ITLMS.git)
+- Open up command prompt for Windows or Terminal for Linux
 - Navigate to the System sub-folder the cloned ITLMS repository folder
+- Install Python packages in *requirements.txt* using 'pip install requirements.txt'
 - Enter 'python app.py' in order to start the Flask server
--   Use your web browser to navigate to the ITLMS User Inteface [https://localhost:5000](https://localhost:5000)
+-  Use your web browser to navigate to the ITLMS User Interface [https://localhost:5000](https://localhost:5000)
 
-2. <u>Using the ITLMS Demonstration Interface
+2. <u>Using the ITLMS Demonstration Interface</u>
 
 - Select the type of junction: **"T-Junction"** or **"Cross-Junction"**
 - For each of the possible directions as indicated in the figure on the left, enter the number of **Lanes**.

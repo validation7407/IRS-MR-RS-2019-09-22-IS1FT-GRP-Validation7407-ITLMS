@@ -25,39 +25,54 @@ os.chdir(dname)
 engine = knowledge_engine.engine(".\pyke1")
 
 def junc(infunc = engine.prove_1_goal):
+    """Determines the type of junction based on the number of directions at the junction
+    """
     junctions = infunc('try.junction_number($num)')
     return junctions
 
 
 def str_lane(infunc = engine.prove_1_goal):
+    """Determine the number of straight lanes
+    """
     st_lanes = infunc('try.junction_number($num)')
     return st_lanes
 
 def str_lane_cars(infunc = engine.prove_1_goal):
+    """Determine the number of cars in each lane
+    """
     st_lane_cars = infunc('try.straight_lane($sl)')
     return st_lane_cars
 
 def rt_lane(infunc = engine.prove_1_goal):
+    """Determines if there is a right lane in that direction
+    """
     rt_lanes = infunc('try.right_lane_there($yn)')
     return rt_lanes
 
 def rt_lane_cars(infunc = engine.prove_1_goal):
+    """Determine the number of cars in the right-turning lane
+    """
     rt_lane_cars = infunc('try.cars_right_lane($crl)')
     return rt_lane_cars
 
 def junction_rules(lanes):
-     if lanes <=2:
+    """Determine the junction size based on the number of lanes
+    """
+    if lanes <=2:
           junction_size = 'small'
-     else:
+    else:
           junction_size = 'big'
-     if junction_size == 'small':
+    if junction_size == 'small':
           bias = 15
-     else:
+    else:
           bias = 25
-     return(junction_size,bias)
+    return(junction_size,bias)
 
 
 def calculate(result):
+    """Calculates the timings for straight and right turning directions and phases.
+        Uses the input values returned from the HTML form.
+    """
     lanes = []   
     c = []
     cars_str = []
@@ -182,6 +197,8 @@ def calculate(result):
 # Genetic Algorithm Functions
 
 def get_data(result):
+    """Parses the input values from the HTML form on the user interface for use with the genetic algorithm.
+    """
     junction_type = 4 if result['jlist'] == "4way" else 3
     
     rates_t = ['td1rate','td2rate','td3rate']
@@ -213,6 +230,8 @@ def get_data(result):
     return (data,arr,junction_type)
 
 def create_individual(data):
+    """Generate a individual chromosome of timings using a random number generator
+    """
     # individuals are list of timings for each direction in each junction, 
     # since traffic in one direction share the same traffic light timing
     
@@ -220,6 +239,8 @@ def create_individual(data):
     return temp
 
 def flow(data,individual,road,arr,junction_type):
+    """Determines the estimated traffic flow for the candidate individual solution.
+    """
     if road ==0: 
         switch = 1
         a1,a1r,a2,a2r = arr
@@ -249,10 +270,7 @@ def flow(data,individual,road,arr,junction_type):
     return value
 
 def fitness(individual, data):
-    """
-        For final value function,
-        
-        road = 0 if direction1 (EW) goes first, 1 if direction2 (NS) goes first
+    """Calculates and returns the fitness value of the candidate solution
     """
     values = 0
     arr = data[1]
@@ -263,7 +281,9 @@ def fitness(individual, data):
     values = flow(data,individual,0,arr,junction_type) 
     return values
 
-def run_ga(data):    
+def run_ga(data):
+    """Run the genetic algorithm generation and search process and returns the final solution of timings
+    """
     ga = pyeasyga.GeneticAlgorithm(data,
                                    population_size=100,
                                    generations=200,
@@ -274,8 +294,8 @@ def run_ga(data):
 
     ga.create_individual = create_individual
     
-    ga.fitness_function = fitness               # set the GA's fitness function
-    ga.run()                                    # run the GA
+    ga.fitness_function = fitness               
+    ga.run()                                    
     result = ga.best_individual()
     
     t1 = result[1][0]
@@ -283,7 +303,7 @@ def run_ga(data):
     t3 = result[1][2]
     t4 = result[1][3]
     
-    print(result)                 # print the GA's best solution
+    print(result)                 
     return(t1,t2,t3,t4)
 
 #.................................................................................
